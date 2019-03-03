@@ -1,0 +1,7 @@
+<h1>{{title}}</h1>
+<div>{{#each jokes}}
+  <p>{{@index}}. {{this}}</p>
+  {{/each}}
+</div>
+<p>{{joke}}</p>
+<a href="/api/jokes/addjoke">add Joke</a>
