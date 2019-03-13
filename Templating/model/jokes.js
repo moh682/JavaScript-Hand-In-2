@@ -16,6 +16,9 @@ class Jokes {
    return this.jokes;
  }
  addJoke(joke) {
+   if(Array.isArray(joke)){
+     this.jokes + joke
+   }
    this.jokes.push(joke);
  }
 }

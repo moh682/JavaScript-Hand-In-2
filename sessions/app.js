@@ -8,3 +8,12 @@ app.use(cookieSession({
   secret : "I_should_never_be_visible_in_code",
   maxAge: 24 * 60 * 30 // 30 min
 }))
+
+app.use(function(req, res, next){
+  if(req.method === "POST"){
+    if(req.headers.userName !== undefined){
+      
+    }
+  }
+
+})
