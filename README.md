@@ -1,5 +1,7 @@
 ## Why would you consider a Scripting Language as JavaScript as your Backend Platform?
 
+
+
 ## Explain Pros & Cons in using Node.js + Express to implement your Backend compared to a strategy using, for example, Java/JAX-RS/Tomcat
 
 ## Node.js uses a Single Threaded Non-blocking strategy to handle asynchronous task. Explain strategies to implement a Node.js based server architecture that still could take advantage of a multi-core Server.
@@ -13,7 +15,7 @@
 
 ## Explain the difference between “Debug outputs” and application logging. What’s wrong with console.log(..) statements in our backend-code.
 
-## Demonstrate a system using application logging and “coloured” debug statements.
+## Demonstrate a system using application logging and “colored” debug statements.
 
 ## Explain, using relevant examples, concepts related to testing a REST-API using Node/JavaScript + relevant packages 
 

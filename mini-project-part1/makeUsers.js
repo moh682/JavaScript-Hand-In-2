@@ -5,6 +5,7 @@ var User = require("./models/user.js");
 var LocationBlog = require("./models/locationBlog.js");
 var Position = require("./models/position.js");
 
+// Created positions to user
 function positionCreator(lon, lat, userId, dateInFuture) {
   var posDetail = { user: userId, loc: { coordinates: [lon, lat] } }
   if (dateInFuture) {
@@ -13,6 +14,7 @@ function positionCreator(lon, lat, userId, dateInFuture) {
   return posDetail;
 }
 
+// Creates dummy
 async function makeData() {
   console.log("Making users")
   try {
@@ -51,6 +53,3 @@ async function makeData() {
 }
 
 makeData();
-
-
-
