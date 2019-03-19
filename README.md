@@ -1,10 +1,32 @@
 ## Why would you consider a Scripting Language as JavaScript as your Backend Platform?
 
-
+* JavaScript is Asynchronous, meaning it may be used for Threads
+* It is easier to use the same language both on front-end and back-end (FullStack Development)
+* It is easier to build and setup with node.js
 
 ## Explain Pros & Cons in using Node.js + Express to implement your Backend compared to a strategy using, for example, Java/JAX-RS/Tomcat
 
+### Node.js and Express 
+#### Pros
+- JavaScript being Asynchronous, meaning its easier to make the program do multiple tasks at the same time.
+- Easy to build and setup. 
+- Automatically all the benefits of JavaScript.
+- node package managers open source tools (later on that subject).
+- Easy to setup a REST-API with generators. 
+
+#### Cons
+-  Due to asynchronous nature, working on the logic (code) is a little complex.
+- NOT suited for high CPU use and heavy Calculations, Java is well suited compared to node.JS. because JavaScript by nature runs on a single thread on a single core. only Input Output operations are asynchronous. this means, time taking calculations in node.JS will block the whole server.  
+- Java is well integrated with Relational database compared with Node.JS. 
+- Java handles server side errors (http status code 500). Node.JS will crash the whole server if this occurred. 
+
 ## Node.js uses a Single Threaded Non-blocking strategy to handle asynchronous task. Explain strategies to implement a Node.js based server architecture that still could take advantage of a multi-core Server.
+
+Solution 1 (Build Threads)
+* Node doesn't come automatically built with Threads, you have to build it from scratch. 
+
+Solution 2 (Multiple Computers)
+* Another Solution would be to take advantage of multiple computers, thereby creating multiple servers. This will achieve the multicore solutions, but thats only if you have the resources.
 
 ## Explain briefly how to deploy a Node/Express application including how to solve the following deployment problems:
 
