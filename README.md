@@ -15,7 +15,6 @@
 - Easy to setup a REST-API with generators. 
 
 #### Cons
--  Due to asynchronous nature, working on the logic (code) is a little complex.
 - NOT suited for high CPU use and heavy Calculations, Java is well suited compared to node.JS. because JavaScript by nature runs on a single thread on a single core. only Input Output operations are asynchronous. this means, time taking calculations in node.JS will block the whole server.  
 - Java is well integrated with Relational database compared with Node.JS. 
 - Java handles server side errors (http status code 500). Node.JS will crash the whole server if this occurred. 
