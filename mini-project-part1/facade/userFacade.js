@@ -1,7 +1,3 @@
-const dbConnect = require('../dbConnect');
-const dbString = require('../settings').DEV_DB_URI;
-dbConnect(dbString);
-
 const User = require('../models/user');
 
 // forget about position in this part
@@ -14,7 +10,6 @@ function addUser(firstName, lastName, userName, password, email, created = undef
       email,
       created
     });
-
     user.save();
 }
 

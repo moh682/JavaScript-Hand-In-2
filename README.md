@@ -29,6 +29,8 @@ Solution 2 (Multiple Computers)
 
 ## Explain briefly how to deploy a Node/Express application including how to solve the following deployment problems:
 
+
+
 ### * Ensure that you Node-process restarts after a (potential) exception that closed the application
 ### * Ensure that you Node-process restarts after a server (Ubuntu) restart
 ### * Ensure that you can take advantage of a multi-core system

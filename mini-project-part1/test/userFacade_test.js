@@ -36,7 +36,6 @@ describe('Test addUser in userFacade',function(){
       "password3",
       "testEmail@email.dk3"
       );
-
   });
 
   it('Test if the User is in the DB', async function(){
