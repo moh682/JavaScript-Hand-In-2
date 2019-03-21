@@ -2,20 +2,17 @@
 const LocBlog = require('../models/locationBlog');
 const User = require('../models/user');
 
-const dbConnect = require('../dbConnect');
-dbConnect(require('../settings').TEST_DB_URI);
-
-async function addLocationBlog(info, img, pos, author){
+async function addLocationBlog(info, pos, author, img){
   var loc = new LocBlog({
     info, img, pos, author
   });
   LocBlog.create(loc);
-  LocBlog.save();
+  //LocBlog.save();
   return loc;
 }
 
 async function likeLocationBlog(blogid, userid){
-  var blog = await LocBlog.findOneAndUpdate({_id : [blogid]}, {likedBy: [userid]}, {new: true}).exec();
+  var blog = await LocBlog.findOneAndUpdate({_id : [blogid]}, { $push: {likedBy: userid} }, {new: true}).exec();
   return blog;
 }
 

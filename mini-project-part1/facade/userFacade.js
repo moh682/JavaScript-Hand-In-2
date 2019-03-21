@@ -1,16 +1,16 @@
 const User = require('../models/user');
 
 // forget about position in this part
-function addUser(firstName, lastName, userName, password, email, created = undefined){
+async function addUser(userName, password, email, firstName = 'undefined', lastName = "undefined", created = undefined){
     var user = new User({
-      firstName,
-      lastName,
-      userName,
-      password,
-      email,
+      firstName: [firstName],
+      lastName: [lastName],
+      userName: [userName],
+      password : [password],
+      email: [email],
       created
     });
-    user.save();
+    await user.save();
 }
 
 async function getAllUsers(){

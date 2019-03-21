@@ -23,7 +23,7 @@ LocationBlogSchema.virtual("likedByCount").get(function(){
 
 // Do on every save
 LocationBlogSchema.pre("save", function(next){
-  this.password = "Hash me Please and add some salt" + this.password;
+  //this.password = "Hash me Please and add some salt" + this.password;
   // calling next is important
   next();
 });

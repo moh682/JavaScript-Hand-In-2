@@ -12,24 +12,23 @@ describe('Test addUser in userFacade',function(){
 
   before( async function(){
     // Removes all the values to test it again
-    await User.remove({});
+    await User.deleteMany({});
 
-    // do something before the test start
-    addUser(
+    await addUser(
       "firstname", 
       "lastname", 
       "username", 
       "password",
       "testEmail@email.dk"
       );
-    addUser(
+    await addUser(
       "firstname2", 
       "lastname2", 
       "username2", 
       "password2",
       "testEmail@email.dk2"
       );
-    addUser(
+    await addUser(
       "firstname3", 
       "lastname3", 
       "username3", 
