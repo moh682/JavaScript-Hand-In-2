@@ -36,15 +36,73 @@
 
 ### \* Ensure that you Node-process restarts after a (potential) exception that closed the application
 
+To ensure my application will work I would use nodemon at least for development, nodemon is a utility that restarts the server or the application if it crashes or after something.     
+
+Another strategy is to use a process manager. When using a process manager, the process manager manages the starting of the application. You no longer start the application yourself, but instead instruct a process manager to do it for you. These process managers can be configured to automatically restart the application on crashes.
+
+[Express on project managers](https://expressjs.com/en/advanced/pm.html)
+ Useful process managers:
+* Restart the app automatically if it crashes.
+* Gain insights into runtime performance and resource consumption.
+* Modify settings dynamically to improve performance.
+* Control clustering.
+
+Some popular process managers are:
+* [forever](https://github.com/foreverjs/forever)
+* [pm2](http://pm2.keymetrics.io/)
+* [StrongLoop Process Manager](http://strong-pm.io/)
+
+These can all be used.
+<br>
+<br>
+
 ### \* Ensure that you Node-process restarts after a server (Ubuntu) restart
+
+Read above.
 
 ### \* Ensure that you can take advantage of a multi-core system
 
+Use the web api's SetTimeout or similar to delegate tasks to the browsers multi-threading capabilities. Or one could use the cluster module for node, which is probably the best solution.
+
 ### \* Ensure that you can run “many” node-applications on a single droplet on the same port (80)
+
+You could configure a load balancer for this purpose. Nginx could also be used as a reverse proxy.
 
 ## Explain the difference between “Debug outputs” and application logging. What’s wrong with console.log(..) statements in our backend-code.
 
+The problem with using `console.log` is that the output cannot easily be disabled when deployed to a production environment. Since `console.log` is a blocking call, the impact on the performance of the application will suffer. 
+
+The `debug` package exposes a function that can be used to print debugging messages.
+
+```js
+const a = require('debug')('a') // Creates a debug function with the name a
+const b = require('debug')('b') // Creates a debug function with the name b
+const c = require('debug')('c') // Creates a debug function with the name c
+a('Printed by a')
+b('Printed by b')
+c('Printed by c')
+```
+
+These messages can easily be enabled or disabled based on the `DEBUG` environment variable.
+
+* when `DEBUG=*`, all debug statements are printed.
+* when `DEBUG=a`, only the `a` debug statements are printed.
+* when `DEBUG=*,-a`, all debug statements except `a` are printed.
+* when `DEBUG=a,b`, only `a` and `b` debug statements are printed.
+
+Names can also be enabled based on a regex like syntax.
+
+```js
+const a = require('debug')('name:a')
+const b = require('debug')('name:b')
+```
+
+* when `DEBUG=name:a`, `a` debug statements are printed.
+* when `DEBUG=name:*`, all debug statements starting with `name` are printed.
+
 ## Demonstrate a system using application logging and “colored” debug statements.
+
+
 
 ## Explain, using relevant examples, concepts related to testing a REST-API using Node/JavaScript + relevant packages
 
